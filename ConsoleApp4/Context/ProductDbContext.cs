@@ -14,7 +14,11 @@ public class ProductDbContext:DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseSqlServer("Data Source=STHQ0116-16;Initial Catalog=ProductQuery;User ID=admin;Password=admin;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        optionsBuilder.UseSqlServer("Data Source=LAPTOP-KBFH69R7;Initial Catalog=ProductQuery;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
     }
-    
+
+    internal object Where(Func<object, bool> value)
+    {
+        throw new NotImplementedException();
+    }
 }
